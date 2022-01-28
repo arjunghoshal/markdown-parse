@@ -8,9 +8,9 @@
             "type": "java",
             "name": "Launch MarkdownParse",
             "request": "launch",
-            "mainClass": "MarkdownParse",
+            "mainClass": "src.MarkdownParse",
             "projectName": "markdown-parse_7f9e1896",
-            "args": "breaking_tests.md"
+            "args": "assets/breaking_tests.md"
         },
         {
             "type": "java",
