@@ -6,17 +6,17 @@
     "configurations": [
         {
             "type": "java",
-            "name": "Launch Current File",
-            "request": "launch",
-            "mainClass": "${file}"
-        },
-        {
-            "type": "java",
             "name": "Launch MarkdownParse",
             "request": "launch",
             "mainClass": "MarkdownParse",
-            "projectName": "markdown-parse_7aa359c1",
+            "projectName": "markdown-parse_7f9e1896",
             "args": "breaking_tests.md"
+        },
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
         }
     ]
 }
