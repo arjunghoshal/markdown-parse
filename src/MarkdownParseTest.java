@@ -64,7 +64,7 @@ public class MarkdownParseTest {
         Path fileName = Path.of("C:/Users/arjun/Downloads/Work/School/Year 1/Winter 2022/CSE 15L/Labs/Lab 3 and 4/markdown-parse/assets/test-file5.md");
 	    String contents = Files.readString(fileName);
         ArrayList<String> links = MarkdownParse.getLinks(contents);
-        List<String> realLinks = List.of("https://google.com/(())a()shd", "https://something()test()");
+        List<String> realLinks = List.of();
         assertEquals(realLinks, links);
     }
 
