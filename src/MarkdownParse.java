@@ -6,23 +6,31 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 
 public class MarkdownParse {
-    public static int findMatchingBracket(String input, int openIndex)
+    public static int findMatchingParentheses(String input, int openIndex)
     {
         int closeIndex = openIndex;
         int pairCount = 1;
-        while (pairCount > 0)
+        try
         {
-            char c = input.charAt(++closeIndex);
-            if (c == '(')
+            while (pairCount > 0)
             {
-                pairCount++;
+                char c = input.charAt(++closeIndex);
+                if (c == '(')
+                {
+                    pairCount++;
+                }
+                else if (c == ')')
+                {
+                    pairCount--;
+                }
             }
-            else if (c == ')')
-            {
-                pairCount--;
-            }
+            return closeIndex;
         }
-        return closeIndex;
+        catch(IndexOutOfBoundsException e)
+        {
+            return -1;
+        }
+        
     }
 
     public static ArrayList<String> getLinks(String markdown) {
@@ -37,8 +45,20 @@ public class MarkdownParse {
                 break;
             }
             int nextCloseBracket = markdown.indexOf("]", nextOpenBracket);
+            if (nextCloseBracket == -1)
+            {
+                break;
+            }
             int openParen = markdown.indexOf("(", nextCloseBracket);
-            int closeParen = findMatchingBracket(markdown, openParen);
+            if (openParen == -1)
+            {
+                break;
+            }
+            int closeParen = findMatchingParentheses(markdown, openParen);
+            if (closeParen == -1)
+            {
+                break;
+            }
             toReturn.add(markdown.substring(openParen + 1, closeParen));
             currentIndex = closeParen + 1;
         }
