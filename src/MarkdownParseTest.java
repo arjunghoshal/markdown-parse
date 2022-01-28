@@ -22,4 +22,13 @@ public class MarkdownParseTest {
         List<String> realLinks = List.of("https://something.com", "some-page.html");
         assertEquals(realLinks, links);
     }
+
+    @Test
+    public void testGetLinksBroken() throws IOException {
+        Path fileName = Path.of("C:/Users/arjun/Downloads/Work/School/Year 1/Winter 2022/CSE 15L/Labs/Lab 3 and 4/markdown-parse/assets/breaking_tests.md");
+	    String contents = Files.readString(fileName);
+        ArrayList<String> links = MarkdownParse.getLinks(contents);
+        List<String> realLinks = List.of("https://google.com/(())a()shd", "https://something()test()");
+        assertEquals(realLinks, links);
+    }
 }
