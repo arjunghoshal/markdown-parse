@@ -1,4 +1,3 @@
-package src;
 // File reading code from https://howtodoinjava.com/java/io/java-read-file-to-string-examples/
 import java.io.IOException;
 import java.nio.file.Files;
@@ -55,6 +54,7 @@ public class MarkdownParse {
                 break;
             }
             int closeParen = findMatchingParentheses(markdown, openParen);
+            //int closeParen = markdown.indexOf(")", openParen);
             if (closeParen == -1)
             {
                 break;
