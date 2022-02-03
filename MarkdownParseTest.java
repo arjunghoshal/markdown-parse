@@ -100,6 +100,6 @@ public class MarkdownParseTest {
         // String contents= Files.readString(Path.of("./assets/test-file.md"));
         List<String> expect = List.of();
 
-        assertEquals(MarkdownParse.getLinks(), expect);
+        assertEquals(MarkdownParse.getLinks(""), expect);
     }
 }
