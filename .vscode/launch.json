@@ -17,7 +17,7 @@
             "request": "launch",
             "mainClass": "src.MarkdownParse",
             "projectName": "markdown-parse_7f9e1896",
-            "args": "assets/breaking_tests.md"
+            "args": "assets/test-files.md"
         },
         {
             "type": "java",
